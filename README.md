@@ -1,156 +1,113 @@
-🍽️ Online Food Delivery Analysis (SQL + Power BI)
-📌 Project Overview
+# 🍔 Online Food Delivery Analysis: Data-Driven Business Insights
 
-This project analyzes an online food delivery dataset to extract meaningful business insights related to orders, revenue, delivery performance, customer behavior, and restaurant performance.
+**Prepared by:** Viswamugi PM  
 
-The complete analytics pipeline follows an industry-style workflow:
+---
 
-CSV → MySQL (SQL) → Power BI Dashboard
+## Project Objective
 
-🎯 Objectives
+The goal of this project is to analyze online food delivery data to gain actionable business insights by understanding:
 
-Analyze order volume and revenue trends
+- Revenue and profit trends
+- Customer order patterns
+- Delivery performance
+- Payment modes and city-wise analysis
 
-Evaluate delivery performance (Fast / Moderate / Delayed)
+---
 
-Identify top-performing cities and restaurants
+## Project Overview
 
-Measure average order value (AOV)
+Online food delivery platforms generate large volumes of transactional and behavioral data related to customers, restaurants, orders, payments, and deliveries. This project focuses on:
 
-Provide actionable insights using interactive dashboards
+- Analyzing real-world noisy data  
+- Performing thorough data cleaning and preprocessing  
+- Extracting meaningful patterns using EDA  
+- Visualizing insights using Power BI dashboards  
 
-🛠️ Tools & Technologies Used
-Tool	Purpose
-MySQL	Data storage, querying, and aggregation
-SQL	Data import, transformation, KPI calculations
-Power BI	Interactive data visualization & dashboards
-CSV Dataset	Source data
-📂 Dataset Information
+---
 
-File Name: online_food_delivery_final.csv
+## Dataset
 
-Total Records: ~100,000 orders
+- **Total Orders:** 100,000  
+- **Total Revenue:** ₹190M  
+- **Total Profit:** ₹283.91K  
+- **Cancelled Orders:** 15,040  
 
-Key Columns:
+**Key Columns:**  
+`Order_ID`, `Order_Date`, `Final_Amount`, `Profit`, `Cuisine_Type`, `City`, `Payment_Mode`, `Delivery_Performance`
 
-Order ID
+**Download Dataset:** [Google Drive Link](https://drive.google.com/file/d/1ln_YbLXHZjah8c-zgrT_zacnfSwTB9ZE/view?usp=sharing)
 
-City
+---
 
-Cuisine Type
+## Tech Stack & Tools
 
-Order Date & Time
+- **Programming:** Python (Pandas, NumPy, Matplotlib, Seaborn)  
+- **Database:** MySQL for storing and querying data  
+- **Visualization:** Power BI dashboard for interactive insights  
 
-Delivery Time
+---
 
-Final Amount
+## Workflow
 
-Profit
+1. **Data Collection:** Dataset of 100k online food orders  
+2. **Data Understanding:** Identify key features and data types  
+3. **Data Cleaning & Preprocessing:**  
+   - Handle missing values and outliers  
+   - Correct invalid values (e.g., ratings > 5, negative profits)  
+   - Standardize categorical variables  
+4. **Exploratory Data Analysis (EDA):**  
+   - Distribution of order values and delivery times  
+   - City-wise, cuisine-wise, and payment mode analysis  
+   - Weekend vs weekday trends  
+   - Cancellation reasons and delivery rating analysis  
+5. **Feature Engineering:**  
+   - Derived columns like peak hours, order day type, and profit margin  
+6. **Data Storage:**  
+   - MySQL database with normalized tables and SQL queries  
+7. **Dashboard & Visualization:**  
+   - Interactive Power BI dashboard showing KPIs:
+     - Total Orders, Revenue, Profit, Average Delivery Time
+     - Cancellation Rate, Average Delivery Rating
+     - Revenue by City and Cuisine
+     - Payment Mode Analysis
 
-Delivery Performance
+---
 
-Ratings
+## Key Insights
 
-Cancellation Status
+- Hyderabad is the top-performing city in terms of revenue  
+- Indian cuisine generates the highest revenue  
+- Weekends show higher order volumes than weekdays  
+- Delivery delays are highly correlated with distance  
+- Payment behavior varies by city and order size  
 
-🧱 Database Design (MySQL)
-📌 Database
-CREATE DATABASE food_delivery;
-USE food_delivery;
+---
 
-📌 Raw Data Table
-CREATE TABLE orders_raw (
-    order_id VARCHAR(50),
-    customer_id VARCHAR(50),
-    customer_age INT,
-    customer_gender VARCHAR(10),
-    city VARCHAR(50),
-    area VARCHAR(50),
-    restaurant_id VARCHAR(50),
-    restaurant_name VARCHAR(100),
-    cuisine_type VARCHAR(50),
-    order_date DATE,
-    order_time TIME,
-    delivery_time INT,
-    distance_km FLOAT,
-    order_value FLOAT,
-    distance_charge FLOAT,
-    final_amount FLOAT,
-    payment_mode VARCHAR(30),
-    order_status VARCHAR(30),
-    cancellation_reason VARCHAR(100),
-    delivery_performance VARCHAR(30),
-    delivery_rating FLOAT,
-    restaurant_rating FLOAT,
-    order_day VARCHAR(15),
-    peak_hour VARCHAR(10),
-    profit_margin FLOAT,
-    profit FLOAT,
-    is_cancelled BOOLEAN
-);
+## Project Deliverables
 
-📥 Data Import Process
+- **Python Scripts:** Data extraction, cleaning, and analysis  
+- **SQL Scripts:** Table creation and data insertion into MySQL  
+- **Power BI Dashboard:** Interactive visualization of key business metrics  
+- **Documentation:** Project explanation, methodology, and insights  
 
-CSV file imported into MySQL using MySQL Workbench Import Wizard
+---
 
-Data validated after import using SQL queries
+## Conclusion
 
-Final data connected directly to Power BI
+- Built a comprehensive data pipeline for online food delivery analysis  
+- Developed interactive Power BI dashboards to monitor performance  
+- Provided actionable insights for revenue optimization, delivery efficiency, and customer satisfaction  
 
-📊 Power BI Dashboard
-🔹 KPIs
+---
 
-Total Orders: 100K
+## References
 
-Total Revenue: ₹189.55M
+- GUVI Online Food Delivery Project Resources  
+- Power BI and MySQL integration guides  
+- EDA and Python analytics tutorials  
 
-Average Order Value: ₹1.9K
 
-On-Time Delivery %: 17.06%
-
-🔹 Visualizations
-
-Monthly order volume trend
-
-Monthly revenue trend
-
-Average order value trend
-
-Delivery performance analysis
-
-Top cities by orders & revenue
-
-Top 10 restaurants by revenue
-
-🔹 Filters & Interactivity
-
-Delivery performance slicer (Fast / Moderate / Delayed)
-
-Month-wise analysis
-
-City-level insights
-
-📈 Key Insights
-
-Revenue peaks during mid-year months
-
-Hyderabad generates the highest revenue
-
-Digital payment modes dominate
-
-Delivery delays significantly impact ratings
-
-Certain restaurants consistently outperform others
-
-✅ Conclusion
-
-This project successfully demonstrates an end-to-end data analytics workflow:
-
-Data ingestion and management using SQL
-
-Business insight generation through Power BI
-
-Dashboard-driven decision support for operations and revenue optimization
 
 🚀 Future Enhancements
 
